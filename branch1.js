@@ -1,0 +1,7 @@
+function openDoor(){
+
+}
+
+function nextDoor(){
+    
+}
