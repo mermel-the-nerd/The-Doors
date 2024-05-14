@@ -28,3 +28,11 @@ h1 {
 h2 {
     z-index: 1;
 }
+
+#input {
+    display: none;
+}
+
+#answer {
+    display: none;
+}
