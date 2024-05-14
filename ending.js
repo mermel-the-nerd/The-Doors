@@ -1,23 +1,30 @@
-const urlParams = new URLSearchParams(window.location.search);
+/*const urlParams = new URLSearchParams(window.location.search);
 const fishCount = urlParams.get("fishCount");
 const fishDisplay = document.getElementById("fishDisplay");
-fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-
+fishDisplay.innerHTML = ("Fish Count: " + fishCount);*/
+//remove when link is established!
+//fishCount = window.prompt("how many fish do you have?")
+//parseInt(fishCount)
+fishCount=7;
+results = document.getElementById("results");
 function end(){
-    fishCount=3
-    results=document.getElementById("results")
-    if (fishCount<1){
-        results.innerHTML=("Grade: F "/n 
-        "The cat ate you because you didn't bring any fish")
-    }
-    else if (fishCount<3){
-        fishDisplay.innerHTML=("Grade: C"/n "The cat begrudgingly eats your fish but is disappointed in your small offering")
-    }
-    else if (fishcount<7){
-    fishDisplay.innerHTML=("Grade: B"/n "The cat eats your fish happily")
-    }
-    else {
-    fishDisplay.innerHTML=("Grade: A++++++"/n "The cat eats all your fish and is satisfied. Congrats on getting the highest possible score!")
-    }
-    
+  if (fishCount < 1) {
+    results.innerHTML = "Grade: F <br/> The cat ate you because you didn't bring any fish"
+    document.getElementById("winImg").src = "winImgF";
+      //add img src
+  }
+  else if (fishCount < 3) {
+    results.innerHTML = "Grade: C <br/> The cat begrudgingly eats your fish but is disappointed in your small offering"
+    document.getElementById("winImg").src = "winImgC";
+      //add img src
+  }
+  else if (fishCount < 7) {
+    results.innerHTML = "Grade: B <br/> The cat eats your fish happily"
+    document.getElementById("winImg").src = "winImgB";
+      //add img src
+  }
+  else {
+    results.innerHTML = "Grade: A++++++ <br/> The cat eats all your fish and is satisfied. Congrats on getting the highest possible score!"
+    document.getElementById("winImg").src = "winImgA.jpeg";
+  }
 }
