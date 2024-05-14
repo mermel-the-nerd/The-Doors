@@ -10,3 +10,21 @@
     margin-left: auto;
     display: block;
 }
+#room0 {
+    display: none;
+}
+.roomImg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    z-index:0;
+}
+h1 {
+    z-index: 1;
+}
+
+h2 {
+    z-index: 1;
+}
