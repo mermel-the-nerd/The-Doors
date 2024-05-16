@@ -1,6 +1,4 @@
 //https://cataas.com/
-//get quarry string from branch 1
-//fishCoun = get...
 
 const urlParams = new URLSearchParams(window.location.search);
 let fishCount = urlParams.get("fishCount");
@@ -10,6 +8,7 @@ const info = document.getElementById("info");
 const door0 = document.getElementById("door0");
 const door1 = document.getElementById("door1");
 const door2 = document.getElementById("door2");
+const door3 = document.getElementById("door3");
 const arrow = document.getElementById("arrow");
 const roomTxt = document.getElementById("roomTxt");
 const input = document.getElementById("input");
@@ -19,10 +18,29 @@ const contBtn = document.getElementById("backBtn");
 const room1img = document.getElementById("room1");
 const room2img = document.getElementById("room2");
 let link = document.getElementById('link');
+const catImage = document.getElementById("catImg");
 link.style.visibility = 'hidden'
 
 fishCount = parseInt(fishCount);
 fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+
+//get cat function
+async function getCat() {
+  let response = await fetch('https://cataas.com/');
+    
+  if (response.ok) {
+    let data = await response.json();
+    let imageUrl = data[0].url;
+    displayCat(imageUrl);
+  } else {
+    alert("HTTP-Error: " + response.status);
+  }
+}
+
+//display cat function
+function displayCat(response) {
+  catImage.src = response;
+}
 
 function openDoor(){
  if (doorCounter === 1){
@@ -57,6 +75,12 @@ function openDoor(){
  }
  else {
     //room back
+    catImage.style.display = "block";
+    door3.style.display = "none";
+    enterRoom();
+    info.innerHTML = "This is the last room press continue to be judged by the almighty cat";   
+    fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+    contBtn.style.display = "block";
  }
 }
 
@@ -101,7 +125,8 @@ function nextDoor() {
         door2.style.display = "block";
     }
     else {
-    
+        door2.style.display = "none";
+        door3.style.display = "block";
     }
 }
 
