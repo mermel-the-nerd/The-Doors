@@ -8,6 +8,7 @@ const room0img = document.getElementById("room0");
 const info = document.getElementById("info");
 const door0 = document.getElementById("door0");
 const door1 = document.getElementById("door1");
+const door2 = document.getElementById("door2");
 const arrow = document.getElementById("arrow");
 const roomTxt = document.getElementById("roomTxt");
 const input = document.getElementById("input");
@@ -15,6 +16,7 @@ const answer = document.getElementById("answer");
 let doorCounter = 1;
 const contBtn = document.getElementById("backBtn");
 const room1img = document.getElementById("room1");
+const room2img = document.getElementById("room2");
 let link = document.getElementById('link');
 link.style.visibility = 'hidden'
 
@@ -47,7 +49,7 @@ function openDoor(){
     room2img.style.display = "block";
     door2.style.display = "none";
     enterRoom();
-    fishcount--;
+    fishCount--;
     info.innerHTML = "You have opened the third door. A cat took one of your fish. Press the button to continue.";   
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
     contBtn.style.display = "block";
