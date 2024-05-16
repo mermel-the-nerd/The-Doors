@@ -7,12 +7,14 @@ const fishDisplay = document.getElementById("fishDisplay");
 const room0img = document.getElementById("room0");
 const info = document.getElementById("info");
 const door0 = document.getElementById("door0");
+const door1 = document.getElementById("door1");
 const arrow = document.getElementById("arrow");
 const roomTxt = document.getElementById("roomTxt");
 const input = document.getElementById("input");
 const answer = document.getElementById("answer");
-const doorCounter = 1;
+let doorCounter = 1;
 const contBtn = document.getElementById("backBtn");
+const room1img = document.getElementById("room1");
 
 fishCount = parseInt(fishCount);
 fishDisplay.innerHTML = ("Fish Count: " + fishCount);
@@ -29,6 +31,9 @@ function openDoor(){
  }
  else if (doorCounter === 2){
     //room 2 random amount of fish 1-3
+    room1img.style.display = "block";
+    door1.style.display = "none";
+    enterRoom();
     let randomFsh = Math.floor(Math.random() * (3));
     info.innerHTML = "You have opened the second door. You got " + randomFsh +" fish";
     fishCount += randomFsh;
@@ -74,6 +79,16 @@ function enterRoom() {
 function nextDoor() {
     //continue to next door
     doorCounter++;
+    if (doorCounter === 2){
+        door0.style.display = "none";
+        door1.style.display = "block";
+    }
+    else if (doorCounter === 3){
+    
+    }
+    else {
+    
+    }
 }
 
 function toEnd() {
