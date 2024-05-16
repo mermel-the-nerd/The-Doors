@@ -36,13 +36,21 @@ function openDoor(){
     room1img.style.display = "block";
     door1.style.display = "none";
     enterRoom();
-    let randomFsh = Math.floor(Math.random() * (3));
-    info.innerHTML = "You have opened the second door. You got " + randomFsh +" fish";
+    let randomFsh = Math.floor(Math.random() * 3) + 1;
+    info.innerHTML = "You have opened the second door. You got " + randomFsh +" fish. Press the button to continue.";   
     fishCount += randomFsh;
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+    contBtn.style.display = "block";
  }
  else if (doorCounter === 3) {
     //room 3 -1 fish then back
+    room2img.style.display = "block";
+    door2.style.display = "none";
+    enterRoom();
+    fishcount--;
+    info.innerHTML = "You have opened the third door. A cat took one of your fish. Press the button to continue.";   
+    fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+    contBtn.style.display = "block";
  }
  else {
     //room back
@@ -86,7 +94,8 @@ function nextDoor() {
         door1.style.display = "block";
     }
     else if (doorCounter === 3){
-    
+        door1.style.display = "none";
+        door2.style.display = "block";
     }
     else {
     
