@@ -15,6 +15,8 @@ const answer = document.getElementById("answer");
 let doorCounter = 1;
 const contBtn = document.getElementById("backBtn");
 const room1img = document.getElementById("room1");
+let link = document.getElementById('link');
+link.style.visibility = 'hidden'
 
 fishCount = parseInt(fishCount);
 fishDisplay.innerHTML = ("Fish Count: " + fishCount);
@@ -92,5 +94,5 @@ function nextDoor() {
 }
 
 function toEnd() {
-    //to ending
+    link.style.visibility = 'visible'
 }

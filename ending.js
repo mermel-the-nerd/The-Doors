@@ -1,11 +1,8 @@
-/*const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
 const fishCount = urlParams.get("fishCount");
 const fishDisplay = document.getElementById("fishDisplay");
-fishDisplay.innerHTML = ("Fish Count: " + fishCount);*/
-//remove when link is established!
-//fishCount = window.prompt("how many fish do you have?")
-//parseInt(fishCount)
-fishCount=9;
+fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+
 results = document.getElementById("results");
 function end(){
   if (fishCount < 1) {
