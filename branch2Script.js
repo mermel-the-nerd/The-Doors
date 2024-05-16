@@ -17,7 +17,7 @@ let doorCounter = 1;
 const contBtn = document.getElementById("backBtn");
 const room1img = document.getElementById("room1");
 const room2img = document.getElementById("room2");
-let link = document.getElementById('link');
+let link = document.getElementById("link");
 const catImage = document.getElementById("catImg");
 link.style.visibility = 'hidden'
 
@@ -58,10 +58,10 @@ function openDoor(){
     door1.style.display = "none";
     enterRoom();
     let randomFsh = Math.floor(Math.random() * 3) + 1;
-    info.innerHTML = "You have opened the second door. You got " + randomFsh +" fish. Press the button to continue.";   
+    info.innerHTML = "You have opened the second door. You got " + randomFsh +" fish. Press the link to continue.";   
     fishCount += randomFsh;
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    contBtn.style.display = "block";
+    toEnd();
  }
  else if (doorCounter === 3) {
     //room 3 -1 fish then back
@@ -69,7 +69,7 @@ function openDoor(){
     door2.style.display = "none";
     enterRoom();
     fishCount--;
-    info.innerHTML = "You have opened the third door. A cat took one of your fish. Press the button to continue.";   
+    info.innerHTML = "You have opened the third door. A cat took one of your fish. Press the link button to continue.";   
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
     contBtn.style.display = "block";
  }
@@ -80,7 +80,7 @@ function openDoor(){
     enterRoom();
     info.innerHTML = "This is the last room press continue to be judged by the almighty cat";   
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    contBtn.style.display = "block";
+    toEnd();
  }
 }
 
@@ -91,19 +91,19 @@ function riddle() {
 
     if (guess === "pool table" || guess === "a pool table") {
         roomTxt.style.display = "none";
-        info.innerHTML = "Congratulations!! You got it right! You get 4 fish. Press the button to continue";
+        info.innerHTML = "Congratulations!! You got it right! You get 4 fish. Press the link to continue";
         fishCount += 4;
         fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-        contBtn.style.display = "block";
+        toEnd();
         input.style.display = "none";
         answer.style.display = "none";
     }
     else {
         roomTxt.style.display = "none";
-        info.innerHTML = "Sorry thats not right. You get no fish from this room. Press the button to continue ";
+        info.innerHTML = "Sorry thats not right. You get no fish from this room. Press the link to continue ";
         input.style.display = "none";
         answer.style.display = "none";
-        contBtn.style.display = "block";
+        toEnd();
     }
 
 }
@@ -131,5 +131,5 @@ function nextDoor() {
 }
 
 function toEnd() {
-    link.style.visibility = 'visible'
+    link.style.display = "block";
 }
