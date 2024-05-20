@@ -5,9 +5,9 @@ fishDisplay.innerHTML = ("Fish Count: " + fishCount);
 endDoor= document.getElementById("endDoor");
 endDoor.style.visibility = 'visible';
 results = document.getElementById("results");
-
+endBtn = document.getElementById("endBtn")
 function end(){
-
+    endBtn.style.visibility = 'hidden';
     if (fishCount < 1) {
     results.innerHTML = "Grade: F <br/> The cat ate you because you didn't bring any fish"
     endDoor.src = "winImgF.jpeg";
