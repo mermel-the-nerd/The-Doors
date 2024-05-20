@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const fishCount = urlParams.get("fishCount");
-const fishDisplay = /*document.getElementById("fishDisplay");
-fishDisplay.innerHTML = ("Fish Count: " + fishCount);*/
+const fishDisplay = document.getElementById("fishDisplay");
+fishDisplay.innerHTML = ("Fish Count: " + fishCount);
 endDoor= document.getElementById("endDoor");
 endDoor.style.visibility = 'visible';
 results = document.getElementById("results");
