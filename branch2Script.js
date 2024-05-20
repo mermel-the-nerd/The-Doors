@@ -19,7 +19,6 @@ const room1img = document.getElementById("room1");
 const room2img = document.getElementById("room2");
 let catImage = document.getElementById("catImg");
 let link = document.getElementById("link");
-link.style.visibility = 'hidden'
 
 fishCount = parseInt(fishCount);
 fishDisplay.innerHTML = ("Fish Count: " + fishCount);
@@ -71,7 +70,7 @@ function openDoor(){
     fishCount--;
     info.innerHTML = "You have opened the third door. A cat took one of your fish. Press the link button to continue.";   
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    contBtn.style.display = "block";
+    toEnd();
  }
  else {
     //room back
