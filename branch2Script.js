@@ -17,8 +17,8 @@ let doorCounter = 1;
 const contBtn = document.getElementById("backBtn");
 const room1img = document.getElementById("room1");
 const room2img = document.getElementById("room2");
+let catImage = document.getElementById("catImg");
 let link = document.getElementById("link");
-const catImage = document.getElementById("catImg");
 link.style.visibility = 'hidden'
 
 fishCount = parseInt(fishCount);
@@ -78,7 +78,9 @@ function openDoor(){
     catImage.style.display = "block";
     door3.style.display = "none";
     enterRoom();
-    info.innerHTML = "This is the last room press continue to be judged by the almighty cat";   
+    info.innerHTML = "This is the last room press continue to be judged by the almighty cat"; 
+    getCat();
+    catImage.display = "block";
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
     toEnd();
  }
@@ -135,3 +137,21 @@ function toEnd(){
     link.style.visibility = "visible"; 
 }
 
+//get the cat from api
+async function getCat() {
+  let response = await fetch('https://api.thecatapi.com/v1/images/search');
+    
+  if (response.ok) {
+    let data = await response.json();
+    let imageUrl = data[0].url;
+    displayCat(imageUrl);
+  } else {
+    alert("HTTP-Error: " + response.status);
+  }
+}
+
+
+//display the cat image
+function displayCat(response) {
+  catImage.src = response;
+}
