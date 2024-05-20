@@ -1,8 +1,21 @@
-.door {
-    width: 350px
-    
-}
-
 #fishcounter {
     text-align: right;
+    font-family: "Monaco", "Lucida Console", monospace;
     }
+
+body {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+#door1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+#arrow {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
