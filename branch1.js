@@ -9,7 +9,8 @@ let hangmantext = document.getElementById('hangman');
 
 const urlParams = new URLSearchParams(window.location.search);
   let fishCount = Number(urlParams.get('fishCount'));
-  counter.innerHTML += fishCount
+      let counterdisplay = 'Fish: ' + fishCount;
+    counter.innerHTML = counterdisplay;
 
 results.style.visibility = 'hidden'
 link.style.visibility = 'hidden'
@@ -21,11 +22,12 @@ function openDoor(){
     door.style.visibility = 'hidden';
     results.style.visibility = 'visible'
     link.style.visibility = 'visible'
-    counter.innerHTML -= fishCount
-    fishCount += 3
+        fishCount += 3
+        counterdisplay = 'Fish: ' + fishCount;
+        counter.innerHTML = counterdisplay;
     
     //go back to lobby
-    counter.innerHTML += fishCount
+    
     results.innerHTML = 'You found three fish!'
  }
  else if (doorCounter==2){
