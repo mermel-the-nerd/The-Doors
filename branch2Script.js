@@ -131,7 +131,7 @@ function nextDoor() {
 }
 
 function toEnd(){
-    link.href = ("ending.html?fishCount =" + fishCount);
+    link.href = ("ending.html?fishCount=" + fishCount);
     link.style.visibility = "visible"; 
 }
 
