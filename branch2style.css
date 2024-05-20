@@ -1,3 +1,8 @@
+body {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
 #door0 {
     display: block;
     margin-left: auto;
@@ -48,3 +53,8 @@ h2 {
 #link {
     visibility: hidden;
 }
+
+#fishDisplay {
+    text-align: center;
+    font-family: "Courier New", monospace;
+    }
