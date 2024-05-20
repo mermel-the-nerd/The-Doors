@@ -25,7 +25,7 @@ function openDoor(){
     fishCount += 3
     
     //go back to lobby
-    //counter.innerHTML += fishCount
+    counter.innerHTML += fishCount
     results.innerHTML = 'You found three fish!'
  }
  else if (doorCounter==2){
