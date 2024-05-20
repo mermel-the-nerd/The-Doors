@@ -46,5 +46,5 @@ h2 {
 }
 
 #link {
-    display: none;
+    visibility: hidden;
 }
