@@ -7,6 +7,7 @@ let link = document.getElementById('link');
 let hangmantext = document.getElementById('hangman');
 let hangmandisplay = document.getElementById('hangmandisplay');
 const input = document.getElementById("input");
+let submitbutton = document.getElementById('inputbutton');
 
 const urlParams = new URLSearchParams(window.location.search);
   let fishCount = Number(urlParams.get('fishCount'));
@@ -16,6 +17,7 @@ const urlParams = new URLSearchParams(window.location.search);
 results.style.visibility = 'hidden'
 link.style.visibility = 'hidden'
 input.style.visibility = 'hidden'
+submitbutton.style.visibility = 'hidden'
 let doorCounter = 1;
 
 function openDoor(){
@@ -72,28 +74,46 @@ hangman();
    
     //change door photo, maybe add numbers to the front of them?
 }
-
+let word = ''
+let answer = []
 function hangman(){
     let wordbank = ['hungry', 'sabrina','yolanda','fiala','maddie','autumn','kitty'];
-    let word = wordbank[Math.floor(Math.random() * wordbank.length)];
-    word = 'maddie'
-    let answer = [5]
+   word = wordbank[Math.floor(Math.random() * wordbank.length)];
+   
+    
     hangmantext.innerHTML = "Your word has " + word.length + " letters"
     input.style.visibility = 'visible'
+    submitbutton.style.visibility = 'visible'
+
      
-    for (let i=0;i>word.length;i++){
+    for (let i=0;i<word.length;i++){
        answer.push('')
     }
-    
-   //hangmandisplay.innerHTML += answer; help
-    while(answer!=word){ //help here bc anser will prob be array and word is string
-    
-    if (word.indexOf(letterguess) != -1){
-        answer[word.indexOf(letterguess)] = letterguess
-    }
+    hangmandisplay.innerText = answer;
+
 
 }
-}
+
+function submit (){
+    let letterguess = input.value;
+       if (word.indexOf(letterguess) === -1){
+         //wrong answer function here
+          }
+    else{
+      for(let i=0;i<word.length;i++){
+        if(word[i]===letterguess){
+          answer[i] = letterguess
+          hangmandisplay.innerText = answer;
+          //something exempt repeats
+        }
+      }
+    }
+    if(answer.join('') === word){
+        hangmantext.innerHTML = 'Hooray! You guessed the secret word! You can now enter the door'
+        //somehow allow door to now be opened
+    }
+    
+  }
 
 //updates link to fishCount and makes link visible
 function toNextBranch(){
