@@ -1,6 +1,6 @@
 #fishcounter {
     text-align: right;
-    font-family: "Monaco", "Lucida Console", monospace;
+    font-family: "Courier New", monospace;
     }
 
 body {
@@ -19,3 +19,4 @@ body {
     margin-right: auto;
     width: 400px;
 }
+

@@ -60,7 +60,7 @@ function openDoor(){
     info.innerHTML = "You have opened the second door. You got " + randomFsh +" fish. Press the link to continue.";   
     fishCount += randomFsh;
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    toEnd();
+    toThree();
  }
  else if (doorCounter === 3) {
     //room 3 -1 fish then back
@@ -70,7 +70,7 @@ function openDoor(){
     fishCount--;
     info.innerHTML = "You have opened the third door. A cat took one of your fish. Press the link button to continue.";   
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    toEnd();
+    toThree();
  }
  else {
     //room back
@@ -81,7 +81,7 @@ function openDoor(){
     getCat();
     catImage.display = "block";
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    toEnd();
+    toThree();
  }
 }
 
@@ -95,7 +95,7 @@ function riddle() {
         info.innerHTML = "Congratulations!! You got it right! You get 4 fish. Press the link to continue";
         fishCount += 4;
         fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-        toEnd();
+        toThree();
         input.style.display = "none";
         answer.style.display = "none";
     }
@@ -104,7 +104,7 @@ function riddle() {
         info.innerHTML = "Sorry thats not right. You get no fish from this room. Press the link to continue ";
         input.style.display = "none";
         answer.style.display = "none";
-        toEnd();
+        toThree();
     }
 
 }
@@ -131,8 +131,8 @@ function nextDoor() {
     }
 }
 
-function toEnd(){
-    link.href = ("ending.html?fishCount=" + fishCount);
+function toThree(){
+    link.href = ("branch3.html?fishCount=" + fishCount);
     link.style.visibility = "visible"; 
 }
 
