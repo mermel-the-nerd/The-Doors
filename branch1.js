@@ -5,7 +5,8 @@ let results = document.getElementById('dooresults');
 let arrow = document.getElementById('arrow');
 let link = document.getElementById('link');
 let hangmantext = document.getElementById('hangman');
-
+let hangmandisplay = document.getElementById('hangmandisplay');
+const input = document.getElementById("input");
 
 const urlParams = new URLSearchParams(window.location.search);
   let fishCount = Number(urlParams.get('fishCount'));
@@ -14,6 +15,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 results.style.visibility = 'hidden'
 link.style.visibility = 'hidden'
+input.style.visibility = 'hidden'
 let doorCounter = 1;
 
 function openDoor(){
@@ -75,15 +77,21 @@ hangman();
 function hangman(){
     let wordbank = ['hungry', 'sabrina','yolanda','fiala','maddie','autumn','kitty'];
     let word = wordbank[Math.floor(Math.random() * wordbank.length)];
-    let answer = []
+    word = 'maddie'
+    let answer = [5]
     hangmantext.innerHTML = "Your word has " + word.length + " letters"
+    input.style.visibility = 'visible'
      
     for (let i=0;i>word.length;i++){
-       //answer.''
+       answer.push('')
     }
-    letterguess = window.prompt("Guess a letter!")
+    
+   //hangmandisplay.innerHTML += answer; help
+    while(answer!=word){ //help here bc anser will prob be array and word is string
+    
     if (word.indexOf(letterguess) != -1){
-        //somehow add to a blank arrayindexOf(letterguess)
+        answer[word.indexOf(letterguess)] = letterguess
     }
 
+}
 }
