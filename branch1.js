@@ -23,11 +23,10 @@ function openDoor(){
 
     door.style.visibility = 'hidden';
     results.style.visibility = 'visible'
-    link.style.visibility = 'visible'
         fishCount += 3
         counterdisplay = 'Fish: ' + fishCount;
         counter.innerHTML = counterdisplay;
-    
+        toNextBranch();
     //go back to lobby
     
     results.innerHTML = 'You found three fish!'
@@ -36,7 +35,7 @@ function openDoor(){
     door.style.visibility = 'hidden';
     results.style.visibility = 'visible'
     results.innerHTML = 'You didnt find any fish :('
-    link.style.visibility = 'visible'
+    toNextBranch();
     //go back
  }
  else if (doorCounter == 3 && fishCount>2){
@@ -49,7 +48,7 @@ function openDoor(){
     fishCount += 1
     counter.innerHTML += fishCount
     results.innerHTML = 'You found one fish!'
-    link.style.visibility = 'visible'
+    toNextBranch();
     
  }
 }
@@ -66,7 +65,7 @@ hangman();
         info.innerHTML = 'This door costs two fish to enter'
         if (fishCount > 2){
             info.innerHTML = "Oh no! You don't have enough fish! :( This door is also the last door of the branch."
-            link.style.visibility = 'visible'
+            toNextBranch();
             //link back to start
         }
     }
@@ -94,4 +93,10 @@ function hangman(){
     }
 
 }
+}
+
+//updates link to fishCount and makes link visible
+function toNextBranch(){
+    link.href = ("branch2.html?fishCount=" + fishCount);
+    link.style.visibility = "visible"; 
 }
