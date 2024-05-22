@@ -1,0 +1,59 @@
+body {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#door0 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.nDoor {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; 
+}
+
+#arrow {
+    width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.roomImg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    z-index:0;
+    display: none;
+}
+h1 {
+    z-index: 1;
+}
+
+h2 {
+    z-index: 1;
+}
+
+#input {
+    display: none;
+}
+
+#answer {
+    display: none;
+}
+
+#link {
+    visibility: hidden;
+}
+
+#fishDisplay {
+    text-align: center;
+    font-family: "Courier New", monospace;
+    }
