@@ -11,20 +11,22 @@ function end(){
     if (fishCount < 1) {
     results.innerHTML = "Grade: F <br/> The cat ate you because you didn't bring any fish"
     endDoor.src = "winImgF.jpeg";
-      //add img src
   }
   else if (fishCount < 4) {
     results.innerHTML = "Grade: C <br/> The cat begrudgingly eats your fish but is disappointed in your small offering"
     endDoor.src = "winImgC.jpeg";
-      //add img src
   }
-  else if (fishCount < 7) {
+  else if (fishCount <14) {
     results.innerHTML = "Grade: B <br/> The cat eats your fish happily"
     endDoor.src = "winImgB.jpeg";
-      //add img src
   }
-  else {
+  else if (fishCount == 14) {
     results.innerHTML = "Grade: A++++++ <br/> The cat eats all your fish and is satisfied. Congrats on getting the highest possible score!"
-    endDoor.src = "winImgA.jpeg";
+    endDoor.src = "winImgA.jpeg";   
+    }
+  else{
+    results.innerHTML = "  "
+    endDoor.src = "403Error.png";
+    fishDisplay.style.visibility = 'hidden';
   }
 }

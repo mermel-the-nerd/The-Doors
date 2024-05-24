@@ -1,12 +1,13 @@
 #fishcounter {
     text-align: right;
     font-family: "Courier New", monospace;
-    }
+}
 
 body {
     text-align: center;
     font-family: "Times New Roman", Times, serif;
 }
+
 #door1 {
     display: block;
     margin-left: auto;
@@ -19,4 +20,3 @@ body {
     margin-right: auto;
     width: 400px;
 }
-
