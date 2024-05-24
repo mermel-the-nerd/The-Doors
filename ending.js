@@ -13,12 +13,12 @@ function end(){
     endDoor.src = "winImgF.jpeg";
       //add img src
   }
-  else if (fishCount < 4) {
+  else if (fishCount < 7) {
     results.innerHTML = "Grade: C <br/> The cat begrudgingly eats your fish but is disappointed in your small offering"
     endDoor.src = "winImgC.jpeg";
       //add img src
   }
-  else if (fishCount < 7) {
+  else if (fishCount < 14) {
     results.innerHTML = "Grade: B <br/> The cat eats your fish happily"
     endDoor.src = "winImgB.jpeg";
       //add img src
