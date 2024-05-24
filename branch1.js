@@ -97,23 +97,28 @@ function hangman(){
 
 
 }
+
+
+
 let count =0
 function submit (){
     let letterguess = input.value;
       if (word.indexOf(letterguess) === -1){
-        if (count<8){
+        if (count<7){
          door.src = 'hangman photos/'+(count+1)+'.png';
             count +=1;
         }
         else{
-            //trigger you lose
-            hangmantext.innerHTML ="Oh no! You lost the hangman game. This door is now barred to you."
-            toNextBranch();
-        }
+                   hangmantext.innerHTML ="Oh no! You lost the hangman game. This door is now barred to you."
+                            toNextBranch();
+                            input.style.visibility = 'hidden'
+                            submitbutton.style.visibility = 'hidden'
+                                                       hangmandisplay.style.visibility = 'hidden'
+        
          }
-          
+        } 
     else{
-      for(let i=0;i<word.length;i++){
+              for(let i=0;i<word.length;i++){
         if(word[i]===letterguess){
           answer[i] = letterguess
           hangmandisplay.innerText = answer;
@@ -128,7 +133,7 @@ function submit (){
         door2open = true
     }
     
-  }
+}
 
 //updates link to fishCount and makes link visible
 function toNextBranch(){
