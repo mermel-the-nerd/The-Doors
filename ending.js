@@ -8,7 +8,7 @@ results = document.getElementById("results");
 endBtn = document.getElementById("endBtn")
 function end(){
     endBtn.style.visibility = 'hidden';
-    if (fishCount < 1) {
+  if (fishCount < 1) {
     results.innerHTML = "Grade: F <br/> The cat ate you because you didn't bring any fish"
     endDoor.src = "winImgF.jpeg";
   }
@@ -16,7 +16,7 @@ function end(){
     results.innerHTML = "Grade: C <br/> The cat begrudgingly eats your fish but is disappointed in your small offering"
     endDoor.src = "winImgC.jpeg";
   }
-else if (fishCount < 12)
+  else if (fishCount < 12)
     results.innerHTML = "Grade: B <br/> The cat eats your fish happily"
     endDoor.src = "winImgB.jpeg";
   }

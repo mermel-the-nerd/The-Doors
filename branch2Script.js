@@ -25,20 +25,20 @@ fishDisplay.innerHTML = ("Fish Count: " + fishCount);
 
 //get cat function
 async function getCat() {
-  let response = await fetch('https://cataas.com/');
-    
-  if (response.ok) {
-    let data = await response.json();
-    let imageUrl = data[0].url;
-    displayCat(imageUrl);
-  } else {
-    alert("HTTP-Error: " + response.status);
-  }
+    let response = await fetch('https://cataas.com/');
+    if (response.ok) {
+        let data = await response.json();
+        let imageUrl = data[0].url;
+        displayCat(imageUrl);
+    } 
+    else {
+        alert("HTTP-Error: " + response.status);
+    }
 }
 
 //display cat function
 function displayCat(response) {
-  catImage.src = response;
+    catImage.src = response;
 }
 
 function openDoor(){
@@ -134,23 +134,4 @@ function nextDoor() {
 function toThree(){
     link.href = ("branch3.html?fishCount=" + fishCount);
     link.style.visibility = "visible"; 
-}
-
-//get the cat from api
-async function getCat() {
-  let response = await fetch('https://api.thecatapi.com/v1/images/search');
-    
-  if (response.ok) {
-    let data = await response.json();
-    let imageUrl = data[0].url;
-    displayCat(imageUrl);
-  } else {
-    alert("HTTP-Error: " + response.status);
-  }
-}
-
-
-//display the cat image
-function displayCat(response) {
-  catImage.src = response;
 }

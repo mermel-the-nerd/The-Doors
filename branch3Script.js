@@ -34,38 +34,38 @@ function door0Enter(){
 }
 
 function openDoor(){
- if (doorCounter === 1){
+    if (doorCounter === 1){
     //if more than 5 fish you can enter and get ur fish doubled if not
-    room1img.style.display = "block";
-    enterRoom();
-    info.innerHTML = "You had 5 fish so you were able to open the first door! Your fish doubled!"
-    fishCount = (fishCount * 2);
-    fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    toEnd();
- }
- else if (doorCounter === 2){
-    //room 2 random amount of fish 1-3
-    room2img.style.display = "block";
-    fishCount --;
-    fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    door1.style.display = "none";
-    enterRoom();
-    let randomFsh = Math.floor(Math.random() * 5) + 2;
-    info.innerHTML = "You have spent 1 fish and opened the second door. You got " + randomFsh +" fish. Press the link to continue.";   
-    fishCount += randomFsh;
-    fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    toEnd();
- }
- else {
-    //room back
-    catImage.style.display = "block";
-    door2.style.display = "none";
-    enterRoom();
-    info.innerHTML = "This is the last room press the link to be judged by the almighty cat"; 
-    catImage.display = "block";
-    fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    toEnd();
- }
+        room1img.style.display = "block";
+        enterRoom();
+        info.innerHTML = "You had 5 fish so you were able to open the first door! Your fish doubled!"
+        fishCount = (fishCount * 2);
+        fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+        toEnd();
+    }
+    else if (doorCounter === 2){
+        //room 2 random amount of fish 1-3
+        room2img.style.display = "block";
+        fishCount --;
+        fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+        door1.style.display = "none";
+        enterRoom();
+        let randomFsh = Math.floor(Math.random() * 5) + 2;
+        info.innerHTML = "You have spent 1 fish and opened the second door. You got " + randomFsh +" fish. Press the link to continue.";   
+        fishCount += randomFsh;
+        fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+        toEnd();
+    }
+    else {
+        //room back
+        catImage.style.display = "block";
+        door2.style.display = "none";
+        enterRoom();
+        info.innerHTML = "This is the last room press the link to be judged by the almighty cat"; 
+        catImage.display = "block";
+        fishDisplay.innerHTML = ("Fish Count: " + fishCount);
+        toEnd();
+    }
 }
 
 function enterRoom() {
@@ -98,5 +98,5 @@ function toEnd(){
 
 //display the cat image
 function displayCat(response) {
-  catImage.src = response;
+    catImage.src = response;
 }
