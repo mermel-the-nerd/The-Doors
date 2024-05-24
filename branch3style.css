@@ -23,7 +23,9 @@ body {
     margin-left: auto;
     display: block;
 }
-
+.roomImg {
+    display: none;
+}
 .roomImg {
     background-size: cover;
     background-position: center;
@@ -31,7 +33,6 @@ body {
     margin: 0;
     padding: 0;
     z-index:0;
-    display: none;
 }
 h1 {
     z-index: 1;
@@ -54,6 +55,6 @@ h2 {
 }
 
 #fishDisplay {
-    text-align: center;
+    text-align: right;
     font-family: "Courier New", monospace;
     }

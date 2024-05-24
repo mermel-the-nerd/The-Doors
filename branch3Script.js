@@ -35,7 +35,9 @@ function door0Enter(){
 
 function openDoor(){
  if (doorCounter === 1){
-    //if more than 5 fish you can enter and get ur fish doubled if not 
+    //if more than 5 fish you can enter and get ur fish doubled if not
+    room1img.style.display = "block";
+    enterRoom();
     info.innerHTML = "You had 5 fish so you were able to open the first door! Your fish doubled!"
     fishCount = (fishCount * 2);
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
@@ -43,9 +45,9 @@ function openDoor(){
  }
  else if (doorCounter === 2){
     //room 2 random amount of fish 1-3
+    room2img.style.display = "block";
     fishCount --;
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
-    room1img.style.display = "block";
     door1.style.display = "none";
     enterRoom();
     let randomFsh = Math.floor(Math.random() * 5) + 2;
@@ -57,10 +59,9 @@ function openDoor(){
  else {
     //room back
     catImage.style.display = "block";
-    door3.style.display = "none";
+    door2.style.display = "none";
     enterRoom();
-    info.innerHTML = "This is the last room press continue to be judged by the almighty cat"; 
-    getCat();
+    info.innerHTML = "This is the last room press the link to be judged by the almighty cat"; 
     catImage.display = "block";
     fishDisplay.innerHTML = ("Fish Count: " + fishCount);
     toEnd();
@@ -69,6 +70,8 @@ function openDoor(){
 
 function enterRoom() {
     door0.style.display = "none";
+    door1.style.display = "none";
+    door2.style.dislpay = "none";
     arrow.style.display = "none";
 }
 
@@ -80,13 +83,10 @@ function nextDoor() {
         door0.style.display = "none";
         door1.style.display = "block";
     }
-    else if (doorCounter === 3){
+    else{
+        info.innerHTML = ("this is the last door");
         door1.style.display = "none";
         door2.style.display = "block";
-    }
-    else {
-        door2.style.display = "none";
-        door3.style.display = "block";
     }
 }
 

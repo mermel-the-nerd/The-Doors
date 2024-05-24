@@ -12,11 +12,15 @@ function end(){
     results.innerHTML = "Grade: F <br/> The cat ate you because you didn't bring any fish"
     endDoor.src = "winImgF.jpeg";
   }
-  else if (fishCount < 4) {
+  else if (fishCount < 7) {
     results.innerHTML = "Grade: C <br/> The cat begrudgingly eats your fish but is disappointed in your small offering"
     endDoor.src = "winImgC.jpeg";
   }
+<<<<<<< HEAD
   else if (fishCount <14) {
+=======
+  else if (fishCount < 14) {
+>>>>>>> 535a5daaf97fc725087adca56fc8eb73abd27b36
     results.innerHTML = "Grade: B <br/> The cat eats your fish happily"
     endDoor.src = "winImgB.jpeg";
   }
