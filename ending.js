@@ -20,7 +20,7 @@ function end(){
     results.innerHTML = "Grade: B <br/> The cat eats your fish happily"
     endDoor.src = "winImgB.jpeg";
   }
-  else if (fishCount === 14) {
+  else if (fishCount < 15) {
     results.innerHTML = "Grade: A++++++ <br/> The cat eats all your fish and is satisfied. Congrats on getting the highest possible score!"
     endDoor.src = "winImgA.jpeg";   
   }
