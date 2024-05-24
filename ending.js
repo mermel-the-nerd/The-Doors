@@ -16,15 +16,15 @@ function end(){
     results.innerHTML = "Grade: C <br/> The cat begrudgingly eats your fish but is disappointed in your small offering"
     endDoor.src = "winImgC.jpeg";
   }
-  else if (fishCount < 12)
+  else if (fishCount < 12) {
     results.innerHTML = "Grade: B <br/> The cat eats your fish happily"
     endDoor.src = "winImgB.jpeg";
   }
-  else if (fishCount == 14) {
+  else if (fishCount === 14) {
     results.innerHTML = "Grade: A++++++ <br/> The cat eats all your fish and is satisfied. Congrats on getting the highest possible score!"
     endDoor.src = "winImgA.jpeg";   
-    }
-  else{
+  }
+  else {
     results.innerHTML = "  "
     endDoor.src = "403Error.png";
     fishDisplay.style.visibility = 'hidden';
