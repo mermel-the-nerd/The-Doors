@@ -40,6 +40,8 @@ function openDoor(){
     results.style.visibility = 'visible'
     results.innerHTML = 'You found three fish';
     fishCount+=3;
+    counterdisplay = 'Fish: ' + fishCount;
+    counter.innerHTML = counterdisplay;
     toNextBranch();
     //go back
  }
