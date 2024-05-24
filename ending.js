@@ -25,6 +25,8 @@ function end(){
   else {
     results.innerHTML = "  "
     endDoor.src = "403Error.png";
+    endDoor.style.height = '300px';
+    endDoor.style.margin = '0 auto';
     fishDisplay.style.visibility = 'hidden';
   }
 }
