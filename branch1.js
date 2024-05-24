@@ -9,6 +9,7 @@ let hangmandisplay = document.getElementById('hangmandisplay');
 const input = document.getElementById("input");
 let submitbutton = document.getElementById('inputbutton');
 
+
 const urlParams = new URLSearchParams(window.location.search);
   let fishCount = Number(urlParams.get('fishCount'));
       let counterdisplay = 'Fish: ' + fishCount;
@@ -18,6 +19,7 @@ results.style.visibility = 'hidden'
 link.style.visibility = 'hidden'
 input.style.visibility = 'hidden'
 submitbutton.style.visibility = 'hidden'
+
 let doorCounter = 1;
 
 function openDoor(){
@@ -33,14 +35,15 @@ function openDoor(){
     
     results.innerHTML = 'You found three fish!'
  }
- else if (doorCounter==2){
+ else if (doorCounter==2&door2open==true){
     door.style.visibility = 'hidden';
     results.style.visibility = 'visible'
-    results.innerHTML = 'You didnt find any fish :('
+    results.innerHTML = 'You found three fish';
+    fishCount+=3;
     toNextBranch();
     //go back
  }
- else if (doorCounter == 3 && fishCount>2){
+ else if (doorCounter == 3){
     door.style.visibility = 'hidden';
     results.style.visibility = 'visible'
     arrow.style.visiblity = 'hidden'
@@ -49,12 +52,12 @@ function openDoor(){
     counter.innerHTML += fishCount
     fishCount += 1
     counter.innerHTML += fishCount
-    results.innerHTML = 'You found one fish!'
+    results.innerHTML = "You didn't find any fish :("
     toNextBranch();
     
  }
 }
-
+let door2open = false
 function nextDoor(){
     doorCounter +=1;
     if (doorCounter == 2){
@@ -84,6 +87,7 @@ function hangman(){
     hangmantext.innerHTML = "Your word has " + word.length + " letters"
     input.style.visibility = 'visible'
     submitbutton.style.visibility = 'visible'
+    door.src = 'hangman photos/0.png'
 
      
     for (let i=0;i<word.length;i++){
@@ -93,12 +97,21 @@ function hangman(){
 
 
 }
-
+let count =0
 function submit (){
     let letterguess = input.value;
-       if (word.indexOf(letterguess) === -1){
-         //wrong answer function here
-          }
+      if (word.indexOf(letterguess) === -1){
+        if (count<8){
+         door.src = 'hangman photos/'+(count+1)+'.png';
+            count +=1;
+        }
+        else{
+            //trigger you lose
+            hangmantext.innerHTML ="Oh no! You lost the hangman game. This door is now barred to you."
+            toNextBranch();
+        }
+         }
+          
     else{
       for(let i=0;i<word.length;i++){
         if(word[i]===letterguess){
@@ -108,9 +121,11 @@ function submit (){
         }
       }
     }
-    if(answer.join('') === word){
+    if(answer.join('') === word){   
         hangmantext.innerHTML = 'Hooray! You guessed the secret word! You can now enter the door'
         //somehow allow door to now be opened
+        door.src = "https://aarsunwoods.com/wp-content/uploads/2021/10/Entrance-Door-with-Helm-and-Kalash-128-jpg.webp"
+        door2open = true
     }
     
   }
